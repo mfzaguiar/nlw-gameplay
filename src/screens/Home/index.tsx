@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Profile } from "../../components/Profile";
 import { ButtonAdd } from "../../components/ButtonAdd";
@@ -13,6 +14,7 @@ import { Apointment } from "../../components/Apointment";
 import { styles } from "./styles";
 
 export function Home() {
+  const navigation = useNavigation();
   const [category, setCategory] = useState("");
 
   const appointments = [
@@ -50,6 +52,10 @@ export function Home() {
       : setCategory(String(categoryId));
   }
 
+  function handleAppointmentDetails() {
+    navigation.navigate("AppointmentDetails");
+  }
+
   return (
     <Background>
       <View>
@@ -68,7 +74,9 @@ export function Home() {
           <FlatList
             data={appointments}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Apointment data={item} />}
+            renderItem={({ item }) => (
+              <Apointment data={item} onPress={handleAppointmentDetails} />
+            )}
             ItemSeparatorComponent={() => <ListDivider />}
             style={styles.matches}
             showsVerticalScrollIndicator={false}
