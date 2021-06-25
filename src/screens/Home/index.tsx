@@ -3,6 +3,8 @@ import { View, FlatList } from "react-native";
 
 import { Profile } from "../../components/Profile";
 import { ButtonAdd } from "../../components/ButtonAdd";
+import { Background } from "../../components/Background";
+
 import { CategorySelect } from "../../components/CategorySelect";
 import { ListHeader } from "../../components/ListHeader";
 import { ListDivider } from "../../components/ListDivider";
@@ -49,28 +51,30 @@ export function Home() {
   }
 
   return (
-    <View>
-      <View style={styles.header}>
-        <Profile />
-        <ButtonAdd />
-      </View>
-      <CategorySelect
-        categorySelected={category}
-        setCategory={handleCategorySelect}
-      />
-
-      <View style={styles.content}>
-        <ListHeader title="Partidas agendadas" subtitle="total 6" />
-
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Apointment data={item} />}
-          ItemSeparatorComponent={() => <ListDivider />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
+    <Background>
+      <View>
+        <View style={styles.header}>
+          <Profile />
+          <ButtonAdd />
+        </View>
+        <CategorySelect
+          categorySelected={category}
+          setCategory={handleCategorySelect}
         />
+
+        <View style={styles.content}>
+          <ListHeader title="Partidas agendadas" subtitle="total 6" />
+
+          <FlatList
+            data={appointments}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <Apointment data={item} />}
+            ItemSeparatorComponent={() => <ListDivider />}
+            style={styles.matches}
+            showsVerticalScrollIndicator={false}
+          />
+        </View>
       </View>
-    </View>
+    </Background>
   );
 }
