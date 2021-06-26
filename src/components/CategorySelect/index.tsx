@@ -8,7 +8,7 @@ import { Category } from "../Category";
 
 type Props = {
   categorySelected?: string;
-  setCategory: (categoryId: number) => void;
+  setCategory: (categoryId: string) => void;
   hasCheckBox?: boolean;
 };
 
