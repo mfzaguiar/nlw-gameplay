@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { LinearGradient } from "expo-linear-gradient";
-import { View, Text } from "react-native";
-import { BorderlessButton } from "react-native-gesture-handler";
-import { Feather } from "@expo/vector-icons";
+import React, { ReactNode } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { View, Text } from 'react-native';
+import { BorderlessButton } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons';
 
-import { theme } from "../../global/styles/theme";
-import { styles } from "./style";
+import { theme } from '../../global/styles/theme';
+import { styles } from './style';
 
 type Props = {
   title: string;
@@ -14,8 +14,8 @@ type Props = {
 };
 
 export function Header({ title, action }: Props) {
-  const { secondary100, secondary40, heading } = theme.colors;
   const navigation = useNavigation();
+  const { secondary100, secondary40, heading } = theme.colors;
 
   function handleGoBack() {
     navigation.goBack();

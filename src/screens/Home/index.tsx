@@ -1,113 +1,113 @@
-import React, { useState } from "react";
-import { View, FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React, { useState } from 'react';
+import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Profile } from "../../components/Profile";
-import { ButtonAdd } from "../../components/ButtonAdd";
-import { Background } from "../../components/Background";
+import { Profile } from '../../components/Profile';
+import { ButtonAdd } from '../../components/ButtonAdd';
+import { Background } from '../../components/Background';
 
-import { CategorySelect } from "../../components/CategorySelect";
-import { ListHeader } from "../../components/ListHeader";
-import { ListDivider } from "../../components/ListDivider";
-import { Apointment } from "../../components/Apointment";
+import { CategorySelect } from '../../components/CategorySelect';
+import { ListHeader } from '../../components/ListHeader';
+import { ListDivider } from '../../components/ListDivider';
+import { Apointment } from '../../components/Apointment';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
 export function Home() {
   const navigation = useNavigation();
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState('');
 
   const appointments = [
     {
-      id: "1",
+      id: '1',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
     {
-      id: "2",
+      id: '2',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
     {
-      id: "3",
+      id: '3',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
     {
-      id: "4",
+      id: '4',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
     {
-      id: "5",
+      id: '5',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
     {
-      id: "6",
+      id: '6',
       guild: {
-        id: "1",
-        name: "Lendários",
+        id: '1',
+        name: 'Lendários',
         icon: null,
         owner: true,
       },
-      category: "1",
-      date: "22/06 às 20:40",
+      category: '1',
+      date: '22/06 às 20:40',
       desciption:
-        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+        'É hoje que vamos chegar ao challenger sem perder uma partida da md10!',
     },
   ];
 
   function handleCategorySelect(categoryId: string) {
-    categoryId === category ? setCategory("") : setCategory(categoryId);
+    categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
   function handleAppointmentDetails() {
-    navigation.navigate("AppointmentDetails");
+    navigation.navigate('AppointmentDetails');
   }
 
   function handleAppointmentCreate() {
-    navigation.navigate("AppointmentCreate");
+    navigation.navigate('AppointmentCreate');
   }
 
   return (
