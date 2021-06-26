@@ -1,10 +1,10 @@
 import React from "react";
 import { ScrollView } from "react-native";
 
-import { styles } from "./styles";
-import { categories } from "../../utils/categories";
-
 import { Category } from "../Category";
+
+import { categories } from "../../utils/categories";
+import { styles } from "./styles";
 
 type Props = {
   categorySelected?: string;
@@ -29,7 +29,7 @@ export function CategorySelect({
           key={category.id}
           title={category.title}
           icon={category.icon}
-          checked={category.id === Number(categorySelected)}
+          checked={category.id === categorySelected}
           onPress={() => setCategory(category.id)}
           hasCheckBox={hasCheckBox}
         />

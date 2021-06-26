@@ -23,7 +23,7 @@ export function Home() {
       guild: {
         id: "1",
         name: "Lendários",
-        ircon: null,
+        icon: null,
         owner: true,
       },
       category: "1",
@@ -36,7 +36,59 @@ export function Home() {
       guild: {
         id: "1",
         name: "Lendários",
-        ircon: null,
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "22/06 às 20:40",
+      desciption:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+    },
+    {
+      id: "3",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "22/06 às 20:40",
+      desciption:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+    },
+    {
+      id: "4",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "22/06 às 20:40",
+      desciption:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+    },
+    {
+      id: "5",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
+        owner: true,
+      },
+      category: "1",
+      date: "22/06 às 20:40",
+      desciption:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10!",
+    },
+    {
+      id: "6",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
         owner: true,
       },
       category: "1",
@@ -46,10 +98,8 @@ export function Home() {
     },
   ];
 
-  function handleCategorySelect(categoryId: number) {
-    categoryId === Number(category)
-      ? setCategory("")
-      : setCategory(String(categoryId));
+  function handleCategorySelect(categoryId: string) {
+    categoryId === category ? setCategory("") : setCategory(categoryId);
   }
 
   function handleAppointmentDetails() {
@@ -72,21 +122,19 @@ export function Home() {
           setCategory={handleCategorySelect}
         />
 
-        <View style={styles.content}>
-          <ListHeader title="Partidas agendadas" subtitle="total 6" />
-
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <Apointment data={item} onPress={handleAppointmentDetails} />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
+        <ListHeader title="Partidas agendadas" subtitle="total 6" />
       </View>
+      <FlatList
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Apointment data={item} onPress={handleAppointmentDetails} />
+        )}
+        ItemSeparatorComponent={() => <ListDivider />}
+        style={styles.matches}
+        contentContainerStyle={{ paddingBottom: 69 }}
+        showsVerticalScrollIndicator={false}
+      />
     </Background>
   );
 }

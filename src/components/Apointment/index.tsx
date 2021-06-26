@@ -1,21 +1,16 @@
 import React from "react";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { View, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
+import CalendarSvg from "../../assets/calendar.svg";
+import PlayerSvg from "../../assets/player.svg";
 import { GuildIcon } from "../GuildIcon";
+import { GuildProps } from "../Guild";
 import { categories } from "../../utils/categories";
 
-import { styles } from "./styles";
-import PlayerSvg from "../../assets/player.svg";
-import CalendarSvg from "../../assets/calendar.svg";
 import { theme } from "../../global/styles/theme";
-
-export type GuildProps = {
-  id: string;
-  name: string;
-  ircon: null;
-  owner: boolean;
-};
+import { styles } from "./styles";
 
 export type AppointmentProps = {
   id: string;
@@ -34,12 +29,17 @@ export function Apointment({ data, ...rest }: Props) {
     (item) => Number(item.id) === Number(data.category)
   );
   const { owner } = data.guild;
-  const { primary, on } = theme.colors;
+  const { primary, on, secondary50, secondary70 } = theme.colors;
 
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
-        <GuildIcon />
+        <LinearGradient
+          colors={[secondary50, secondary70]}
+          style={styles.guildIconContainer}
+        >
+          <GuildIcon />
+        </LinearGradient>
 
         <View style={styles.content}>
           <View style={styles.header}>
