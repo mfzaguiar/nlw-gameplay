@@ -1,11 +1,11 @@
-import React from "react";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
-import { LinearGradient } from "expo-linear-gradient";
-import { SvgProps } from "react-native-svg";
-import { View, Text } from "react-native";
+import React from 'react';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
+import { SvgProps } from 'react-native-svg';
+import { View, Text } from 'react-native';
 
-import { styles } from "./styles";
-import { theme } from "../../global/styles/theme";
+import { styles } from './styles';
+import { theme } from '../../global/styles/theme';
 
 type Props = RectButtonProps & {
   title: string;
@@ -38,6 +38,7 @@ export function Category({
           )}
 
           <Icon width={48} height={48} />
+
           <Text style={styles.title}>{title}</Text>
         </LinearGradient>
       </LinearGradient>

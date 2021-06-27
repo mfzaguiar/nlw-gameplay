@@ -1,13 +1,14 @@
-import React from "react";
-import { ScrollView } from "react-native";
+import React from 'react';
+import { ScrollView } from 'react-native';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 
-import { Category } from "../Category";
+import { styles } from './styles';
+import { categories } from '../../utils/categories';
 
-import { categories } from "../../utils/categories";
-import { styles } from "./styles";
+import { Category } from '../Category';
 
 type Props = {
-  categorySelected?: string;
+  categorySelected: string;
   setCategory: (categoryId: string) => void;
   hasCheckBox?: boolean;
 };
