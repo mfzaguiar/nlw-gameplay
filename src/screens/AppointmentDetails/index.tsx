@@ -1,38 +1,38 @@
-import React from "react";
-import { ImageBackground, Text, View, FlatList } from "react-native";
-import { BorderlessButton } from "react-native-gesture-handler";
-import { Fontisto } from "@expo/vector-icons";
+import React from 'react';
+import { ImageBackground, Text, View, FlatList } from 'react-native';
+import { BorderlessButton } from 'react-native-gesture-handler';
+import { Fontisto } from '@expo/vector-icons';
 
-import { Background } from "../../components/Background";
-import { ListHeader } from "../../components/ListHeader";
-import { ListDivider } from "../../components/ListDivider";
-import { ButtonIcon } from "../../components/ButtonIcon";
-import { Header } from "../../components/Header";
-import { Member } from "../../components/Member";
+import { Background } from '../../components/Background';
+import { ListHeader } from '../../components/ListHeader';
+import { ListDivider } from '../../components/ListDivider';
+import { ButtonIcon } from '../../components/ButtonIcon';
+import { Header } from '../../components/Header';
+import { Member } from '../../components/Member';
 
-import BannerImg from "../../assets/banner.png";
-import { theme } from "../../global/styles/theme";
-import { styles } from "./styles";
+import BannerImg from '../../assets/banner.png';
+import { theme } from '../../global/styles/theme';
+import { styles } from './styles';
 
 export function AppointmentDetails() {
   const membres = [
     {
-      id: "1",
-      username: "Matheus",
-      avatar_url: "https://github.com/mfzaguiar.png",
-      status: "online",
+      id: '1',
+      username: 'Matheus',
+      avatar_url: 'https://github.com/mfzaguiar.png',
+      status: 'online',
     },
     {
-      id: "2",
-      username: "Rodrigo",
-      avatar_url: "https://github.com/rodrigorgtic.png",
-      status: "offline",
+      id: '2',
+      username: 'Rodrigo',
+      avatar_url: 'https://github.com/rodrigorgtic.png',
+      status: 'offline',
     },
     {
-      id: "3",
-      username: "Panda",
-      avatar_url: "https://github.com/panda.png",
-      status: "online",
+      id: '3',
+      username: 'Panda',
+      avatar_url: 'https://github.com/panda.png',
+      status: 'online',
     },
   ];
 
@@ -62,11 +62,11 @@ export function AppointmentDetails() {
         keyExtractor={(item) => item.id}
         data={membres}
         renderItem={({ item }) => <Member data={item} />}
-        ItemSeparatorComponent={() => <ListDivider />}
+        ItemSeparatorComponent={() => <ListDivider isCentered />}
         style={styles.members}
       />
       <View style={styles.footer}>
-        <ButtonIcon title={"Entrar na partida"} />
+        <ButtonIcon title={'Entrar na partida'} />
       </View>
     </Background>
   );
